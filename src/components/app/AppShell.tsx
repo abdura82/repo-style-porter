@@ -65,7 +65,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               <h1 className="font-serif text-2xl font-bold leading-none tracking-[0.12em] text-primary-foreground">SİEC</h1>
               <p className="mt-1 text-[11px] font-medium tracking-wide text-primary-foreground/75">Talebe Takip Paneli</p>
             </div>
-            <GroupSwitch />
+
           </div>
         </header>
       </div>

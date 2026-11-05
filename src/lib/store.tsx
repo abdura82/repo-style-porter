@@ -94,7 +94,7 @@ const StoreContext = createContext<Store | null>(null);
 export function StoreProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState<State>({ students: [], tutanaklar: [], attendance: [] });
   const [ready, setReady] = useState(false);
-  const [group, setGroupState] = useState<GroupId>("ibtidai");
+  const [group, setGroupState] = useState<GroupId>("ihzari");
 
   useEffect(() => {
     setState(load());
