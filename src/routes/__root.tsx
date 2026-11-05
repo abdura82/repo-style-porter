@@ -86,7 +86,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
+      { name: "theme-color", content: "#2f6b52" },
+      { name: "apple-mobile-web-app-capable", content: "yes" },
+      { name: "mobile-web-app-capable", content: "yes" },
+      { name: "apple-mobile-web-app-title", content: "SİEC" },
+      { name: "apple-mobile-web-app-status-bar-style", content: "default" },
       { title: "Kur'an Kursu" },
       { name: "description", content: "Kur'an kursu talebe ve yoklama takibi." },
       { name: "author", content: "Lovable" },
@@ -104,6 +109,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: FONT_CSS },
       { rel: "preload", as: "image", href: "/logo.png" },
       { rel: "icon", type: "image/png", href: "/favicon.png" },
+      { rel: "manifest", href: "/manifest.webmanifest" },
+      { rel: "apple-touch-icon", href: "/icon-180.png" },
     ],
   }),
   shellComponent: RootShell,
