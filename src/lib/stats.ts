@@ -124,6 +124,6 @@ export function autoLevel(rows: AttendanceRow[]): { level: AutoLevel; rate: numb
   }
   if (total === 0) return { level: "Yeni", rate: 0 };
   const rate = came_ / total;
-  const level: AutoLevel = rate >= 0.9 ? "Çok İyi" : rate >= 0.75 ? "İyi" : rate >= 0.5 ? "Orta" : "Zayıf";
+  const level: AutoLevel = rate >= 0.95 ? "Çok İyi" : rate >= 0.88 ? "İyi" : rate >= 0.8 ? "Orta" : "Zayıf";
   return { level, rate };
 }
