@@ -1,9 +1,6 @@
 import { LiquidTabBar } from "./LiquidTabBar";
 import { BookOpen, Users, CalendarCheck, FileText, Menu } from "./icons";
 import type { ReactNode } from "react";
-import { useLocation, useNavigate } from "@tanstack/react-router";
-import { useStore } from "@/lib/store";
-import { GROUPS } from "@/lib/groups";
 
 const tabs = [
   { to: "/", label: "Talebeler", icon: Users },
@@ -22,31 +19,6 @@ function Mosque() {
       <circle cx="219" cy="10" r="5" />
       <path d="M380 0a28 28 0 1 0 10 50a22 22 0 1 1 -10-50z" />
     </svg>
-  );
-}
-
-/** Switches the whole app between the İbtidai and İhzari groups. */
-function GroupSwitch() {
-  const { group, setGroup } = useStore();
-  const { pathname } = useLocation();
-  const navigate = useNavigate();
-  return (
-    <div role="group" aria-label="Grup seçimi" className="ml-auto flex rounded-full bg-primary-foreground/15 p-1">
-      {GROUPS.map((g) => (
-        <button
-          key={g.id}
-          type="button"
-          aria-pressed={group === g.id}
-          onClick={() => {
-            setGroup(g.id);
-            if (pathname.startsWith("/talebe/")) void navigate({ to: "/" });
-          }}
-          className={`rounded-full px-3 py-1.5 text-xs font-semibold transition-colors ${group === g.id ? "bg-card text-primary shadow-sm" : "text-primary-foreground/80"}`}
-        >
-          {g.label}
-        </button>
-      ))}
-    </div>
   );
 }
 
